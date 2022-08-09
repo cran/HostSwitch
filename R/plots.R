@@ -2,14 +2,15 @@
 #'
 #' This function creates a standard plot for the simulated host switches
 #'
-#' @param HostSwitch_simulated_quantities The object HostSwitch created by \code{\link{simHostSwitch}}
-#' @param sim_n for HostSwitch object including more than 1 simulation saved, "sim_n" specifies which simulation have to be plotted. The plot from the first simulation is shown as default (sim_n = 1). If the called simulation number is not present in the HostSwitch object, the error message "Error in FUN(X[[i]], ...) : subscript out of bounds" will be returned.
+#' @param HostSwitch_simulated_quantities The object HostSwitch created by [simHostSwitch()]
+#' @param sim_n for HostSwitch object including more than 1 simulation saved, "sim_n" specifies which simulation have to be plotted. The plot from the first simulation is shown as default (sim_n = 1). If the called simulation number is not present in the HostSwitch object, an error message will be returned.
 #'
 #' @details The function plots dispersal and colonization (host-switching events) of Consumers on a novel host offered at each generation given the values of parameters related to carrying capacity, fitness space, migration, reproduction, selection, and biological model. The X-axis shows the total number of possible generations defined in the object HostSwitch, the Y-axis the phenotype values of the Consumer.
 #'
 #' Black dots are the phenotype values of the Consumer after each event of reproduction. The green squares represent the value of phenotype favored by the novel Resource offered at each generation. The red squares are the phenotype values of the Consumer favored by the current Resource.The blue dots represents the phenotypes of dispersing Consumers, and the yellow dots the successfully colonizing Consumers.
 #'
 #' @import ggplot2
+#' @import checkmate
 #' @return An S3 object with class gg/ggplot
 #' @examples
 #' m1 = simHostSwitch(n_sim=100) # create an HostSwitch object with 100 simulations.
@@ -22,6 +23,8 @@
 #'
 #' @export
 plotHostSwitch <- function(HostSwitch_simulated_quantities,sim_n=1){
+  checkmate::assert_class(HostSwitch_simulated_quantities,"HostSwitch") # class HostSwitch
+  checkmate::assertNumeric(sim_n,lower=1,upper=HostSwitch_simulated_quantities$n_sim)
 
   n_generations <- pRes_max <- pRes_min <- p <- x <- y <- NULL # global variables
 
@@ -33,7 +36,7 @@ plotHostSwitch <- function(HostSwitch_simulated_quantities,sim_n=1){
                              legend.text  = ggplot2::element_text(size=12))
 
   dat= HostSwitch_simulated_quantities[c("pRes_sim","pRes_new_sim","pInd_sim","pInd_whichjump_sim","pInd_whichsurv_sim")]
-  dat = sapply(dat, "[[", sim_n)
+  dat = lapply(dat, "[[", sim_n) # extracts desired simulation for plotting; originally with sapply
   pRes_sim     = data.frame(p=rep("pRes",length(dat$pRes_sim)), y=dat$pRes_sim,x=0:(length(dat$pRes_sim)-1))
   pRes_new_sim = data.frame(p=rep("pRes_new",length(dat$pRes_new_sim)),y=dat$pRes_new_sim,x=0:(length(dat$pRes_new_sim)-1))
 

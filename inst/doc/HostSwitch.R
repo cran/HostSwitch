@@ -2,6 +2,9 @@
 knitr::opts_chunk$set(fig.width=8.5, fig.height=5.5, fig.align='center', warning=FALSE, message=FALSE, cache = T)
 
 ## ---- eval=FALSE--------------------------------------------------------------
+#  install.packages("HostSwitch")
+
+## ---- eval=FALSE--------------------------------------------------------------
 #  devtools::install_github(repo = "berndpanassiti/HostSwitch",build_vignettes = TRUE)
 
 ## -----------------------------------------------------------------------------
