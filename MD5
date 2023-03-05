@@ -1,4 +1,4 @@
-be161cc8b52b22102050104919468e37 *DESCRIPTION
+3d6de3697753614b909c8b3854448ab9 *DESCRIPTION
 924f875425dd66d50d322b259b34fbcd *NAMESPACE
 9e6e27f4a708c897790c39cd4af0c2f2 *NEWS.md
 9f4fc02b910f7e935c41883bee11ec5f *R/HostSwitch.R
@@ -6,14 +6,14 @@ a85b70debc79487cf3cabf8c6d572903 *R/ShinyPlots.R
 f21355028b869e9f7dc47afd3a136098 *R/helper_functions.R
 e431350ace18c661a10eeb358f6ea299 *R/parli.R
 0af6a1eaeff878345fa248f1aa44bb0c *R/plots.R
-24a38a998324baba9de78fa8222d5a1d *R/startup.R
+cfb84ae3b97fc484512ea6f1b9e85929 *R/startup.R
 31e2cbe5d36acf431dcb2ce512bb7db0 *R/testHostSwitch.R
 3c6563622856a501128ffa392f062b05 *README.md
-470997257a4557c6c59dc72730df6ae7 *build/vignette.rds
+3a2423a06b50c7ed54201983040202d0 *build/vignette.rds
 fd0545d44d07fe8f587f2d6ac58d4194 *data/parli.RData
 245b10094a620add505ad8ca7afdf022 *inst/doc/HostSwitch.R
 1c82cf24c945f493edcb9568da2ab446 *inst/doc/HostSwitch.Rmd
-f13c9fd7de94dbca020eb85132e8ce85 *inst/doc/HostSwitch.html
+c4d148ececd52c2e6c34cf6f4c4fad16 *inst/doc/HostSwitch.html
 dd4c1dfa1fe7345d02c511b34e660b28 *inst/examples/plotsHelp.R
 ab8520c7b1f1535988397d0276df8212 *inst/shiny-examples/shinyHostSwitch/server.R
 2d65882f2b727efa04e34ed1baa86c80 *inst/shiny-examples/shinyHostSwitch/ui.R
@@ -35,5 +35,5 @@ f647e3b0dd3d01c5f1912e21638e2cb3 *man/testHostSwitch.Rd
 f43f12e85f7810d9844835970a61f839 *tests/tinytest.R
 1c82cf24c945f493edcb9568da2ab446 *vignettes/HostSwitch.Rmd
 44929738b395947f3d076f772ef3545f *vignettes/HostSwitch_files/figure-html/unnamed-chunk-6-1.png
-e1e83a9bffa038ba21280065adbce624 *vignettes/HostSwitch_files/figure-html/unnamed-chunk-7-1.png
+314a0f7b193e81cba4d2e15f33ff1fdc *vignettes/HostSwitch_files/figure-html/unnamed-chunk-7-1.png
 25c54a27f02a24d2b460e4f7bb008fa0 *vignettes/Literature.bib
